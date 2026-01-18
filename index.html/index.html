@@ -3,44 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GestCon Imóveis</title>
+  <title>Gestcon Imóveis</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section class="hero">
-    <div class="card">
-      <h1>Encontre seu imóvel ideal</h1>
-      <p>Preencha os dados e fale direto com um especialista da GestCon</p>
+  <main class="container">
+    <header>
+      <h1>GESTCON IMÓVEIS</h1>
+      <p>Encontre o imóvel ideal com rapidez e segurança</p>
+    </header>
 
-      <form id="form">
-        <input type="text" id="nome" placeholder="Seu nome" required>
+    <form id="leadForm">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="tel" id="telefone" placeholder="Seu WhatsApp" required>
 
-        <input type="number" id="quartos" placeholder="Quantidade de quartos" required>
+      <select id="bairro" required>
+        <option value="">Localização desejada</option>
+        <option value="Recife">Recife</option>
+        <option value="Paulista">Paulista</option>
+      </select>
 
-        <div class="duo">
-          <input type="number" id="min" placeholder="Tamanho mínimo (m²)" required>
-          <input type="number" id="max" placeholder="Tamanho máximo (m²)" required>
-        </div>
+      <input type="number" id="quartos" placeholder="Quantidade de quartos" required>
 
-        <select id="vaga" required>
-          <option value="">Vaga de garagem</option>
-          <option>Com vaga</option>
-          <option>Sem vaga</option>
-        </select>
+      <div class="grid">
+        <input type="number" id="areaMin" placeholder="Área mínima (m²)" required>
+        <input type="number" id="areaMax" placeholder="Área máxima (m²)" required>
+      </div>
 
-        <select id="posicao" required>
-          <option value="">Posição solar</option>
-          <option>Nascente</option>
-          <option>Poente</option>
-        </select>
+      <select id="vaga" required>
+        <option value="">Vaga de garagem</option>
+        <option value="Com vaga">Com vaga</option>
+        <option value="Sem vaga">Sem vaga</option>
+      </select>
 
-        <button type="submit">
-          <span>Falar com a GestCon no WhatsApp</span>
-        </button>
-      </form>
-    </div>
-  </section>
+      <select id="posicao" required>
+        <option value="">Posição do imóvel</option>
+        <option value="Nascente">Nascente</option>
+        <option value="Poente">Poente</option>
+      </select>
+
+      <button type="submit">FALAR COM A GESTCON NO WHATSAPP</button>
+    </form>
+  </main>
 
   <script src="script.js"></script>
 </body>

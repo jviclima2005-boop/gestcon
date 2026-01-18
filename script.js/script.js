@@ -1,27 +1,29 @@
-document.getElementById("form").addEventListener("submit", function (e) {
+document.getElementById("leadForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const nome = document.getElementById("nome").value.trim();
+  const nome = document.getElementById("nome").value;
+  const telefone = document.getElementById("telefone").value;
+  const bairro = document.getElementById("bairro").value;
   const quartos = document.getElementById("quartos").value;
-  const min = document.getElementById("min").value;
-  const max = document.getElementById("max").value;
+  const areaMin = document.getElementById("areaMin").value;
+  const areaMax = document.getElementById("areaMax").value;
   const vaga = document.getElementById("vaga").value;
   const posicao = document.getElementById("posicao").value;
 
-  const mensagem =
-`Olá, meu nome é ${nome}.
+  const mensagem = `
+Olá, me chamo ${nome}.
+Meu WhatsApp: ${telefone}
 
-Procuro um imóvel com as seguintes características:
-• ${quartos} quarto(s)
-• Área entre ${min}m² e ${max}m²
-• ${vaga}
-• Posição solar: ${posicao}
+Procuro imóvel em ${bairro}
+• Quartos: ${quartos}
+• Área: ${areaMin}m² a ${areaMax}m²
+• Garagem: ${vaga}
+• Posição: ${posicao}
+`;
 
-Aguardo retorno da GestCon.`;
+  const numero = "5581991732930";
 
-  const telefone = "5581991732930";
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
-  const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`;
-
-  window.location.href = url;
+  window.open(url, "_blank");
 });

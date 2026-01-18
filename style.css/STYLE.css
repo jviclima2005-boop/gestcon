@@ -1,117 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&display=swap');
 
 :root {
-  --azul: #081c3a;
-  --azul-claro: #0f2f66;
-  --dourado: #cfae70;
-  --cinza: #6b7280;
-  --verde: #25d366;
+  --bg-main: #05070f;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --bg-card-border: rgba(255, 255, 255, 0.15);
+  --primary: #2563eb;
+  --accent: #22c55e;
+  --text-main: #f9fafb;
+  --text-muted: #9ca3af;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
-  margin: 0;
-  background: radial-gradient(circle at top, #102a56, #050f22);
   min-height: 100vh;
-}
-
-.hero {
-  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, #0f1c3f, transparent 40%),
+    radial-gradient(circle at 80% 80%, #041433, transparent 40%),
+    var(--bg-main);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 15px;
+  color: var(--text-main);
 }
 
-.card {
-  background: linear-gradient(180deg, #ffffff, #f5f7fa);
+/* CONTAINER PRINCIPAL */
+.hero {
   width: 100%;
-  max-width: 480px;
-  padding: 40px;
-  border-radius: 28px;
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.45),
-    inset 0 1px 0 rgba(255,255,255,0.6);
-  animation: slideUp .9s ease;
+  padding: 40px 20px;
 }
 
-@keyframes slideUp {
+/* CARD */
+.card {
+  max-width: 520px;
+  margin: auto;
+  padding: 48px;
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid var(--bg-card-border);
+  box-shadow:
+    0 40px 120px rgba(0,0,0,0.6);
+  animation: enter 0.8s ease;
+}
+
+@keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) scale(0.98);
   }
 }
 
+/* TÍTULO */
 h1 {
-  margin: 0;
-  font-size: 30px;
-  color: var(--azul);
-  letter-spacing: -0.5px;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
 }
 
 p {
-  margin: 12px 0 28px;
-  color: var(--cinza);
-  font-size: 15px;
+  font-size: 16px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
 }
 
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
+  gap: 18px;
+}
+
+input,
+select {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 16px;
+  padding: 16px 18px;
+  font-size: 15px;
+  color: var(--text-main);
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.25);
+}
+
+/* CAMPOS DUPLOS */
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
 
-input, select {
-  padding: 15px;
-  border-radius: 14px;
-  border: 1px solid #d1d5db;
-  font-size: 15px;
-  background: white;
-  transition: 0.25s;
-}
-
-input:focus, select:focus {
-  border-color: var(--azul-claro);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(15,47,102,0.15);
-}
-
-.duo {
-  display: flex;
-  gap: 12px;
-}
-
+/* BOTÃO */
 button {
-  margin-top: 10px;
-  background: linear-gradient(135deg, var(--verde), #1ebd5b);
-  border: none;
+  margin-top: 12px;
   padding: 18px;
-  border-radius: 16px;
+  border-radius: 18px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #052e16;
   font-size: 16px;
-  font-weight: 600;
-  color: white;
+  font-weight: 800;
   cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow:
+    0 20px 45px rgba(34,197,94,0.45);
   transition: all 0.3s ease;
-  box-shadow: 0 14px 35px rgba(37,211,102,0.45);
 }
 
 button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 45px rgba(37,211,102,0.65);
+  box-shadow:
+    0 28px 65px rgba(34,197,94,0.65);
 }
 
 button:active {
   transform: translateY(0);
 }
 
-/* RESPONSIVO TOTAL */
-@media (max-width: 520px) {
+/* MOBILE */
+@media (max-width: 560px) {
   .card {
-    padding: 32px 26px;
+    padding: 36px 24px;
+    border-radius: 22px;
   }
 
   h1 {
