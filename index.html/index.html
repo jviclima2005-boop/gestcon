@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GestCon Imóveis</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="hero">
+    <div class="card">
+      <h1>Encontre seu imóvel ideal</h1>
+      <p>Preencha os dados e fale direto com um especialista da GestCon</p>
+
+      <form id="form">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+
+        <input type="number" id="quartos" placeholder="Quantidade de quartos" required>
+
+        <div class="duo">
+          <input type="number" id="min" placeholder="Tamanho mínimo (m²)" required>
+          <input type="number" id="max" placeholder="Tamanho máximo (m²)" required>
+        </div>
+
+        <select id="vaga" required>
+          <option value="">Vaga de garagem</option>
+          <option>Com vaga</option>
+          <option>Sem vaga</option>
+        </select>
+
+        <select id="posicao" required>
+          <option value="">Posição solar</option>
+          <option>Nascente</option>
+          <option>Poente</option>
+        </select>
+
+        <button type="submit">
+          <span>Falar com a GestCon no WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

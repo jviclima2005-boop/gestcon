@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --azul: #081c3a;
+  --azul-claro: #0f2f66;
+  --dourado: #cfae70;
+  --cinza: #6b7280;
+  --verde: #25d366;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #102a56, #050f22);
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px;
+}
+
+.card {
+  background: linear-gradient(180deg, #ffffff, #f5f7fa);
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  border-radius: 28px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  animation: slideUp .9s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  color: var(--azul);
+  letter-spacing: -0.5px;
+}
+
+p {
+  margin: 12px 0 28px;
+  color: var(--cinza);
+  font-size: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+input, select {
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  background: white;
+  transition: 0.25s;
+}
+
+input:focus, select:focus {
+  border-color: var(--azul-claro);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(15,47,102,0.15);
+}
+
+.duo {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  margin-top: 10px;
+  background: linear-gradient(135deg, var(--verde), #1ebd5b);
+  border: none;
+  padding: 18px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 14px 35px rgba(37,211,102,0.45);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px rgba(37,211,102,0.65);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVO TOTAL */
+@media (max-width: 520px) {
+  .card {
+    padding: 32px 26px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+}
